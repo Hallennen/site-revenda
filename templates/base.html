@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/base.css">
+    {% block style %}
+
+    {% endblock %}
+
+</head>
+<body>
+    <div class="barra_fixa">
+        <nav>
+            <a id="titulo" href="/">SHEKINA</a>  
+        </nav>
+
+        <form action="{{ ('/catalogo/pesquisa') }}" method="POST">
+            <input type="search" placeholder=" Pesquisar" class="barra_pesquisa" name="barra_pesquisa"> 
+        </form>
+
+        <li>
+            <ul><a id="buscas" href="{{ ('/catalogo/peça') }}">PEÇAS</a></ul>
+            <ul><a id="buscas" href="{{ ('/catalogo/oleo') }}">ÓLEOS</a></ul>
+            <ul><a id="buscas" href="{{ ('/catalogo/pneu') }}">PNEUS</a></ul>
+        </li>
+    </div>
+
+
+    {% block content %}
+    {% endblock %}
+
+
+
+    <footer>
+        <p>@Shekina.com</p>
+        <p>11 4002-8922 - AV. Engenheiro coelho, 123</p>
+    </footer>
+</body>
+</html>

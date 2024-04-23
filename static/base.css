@@ -1,0 +1,30 @@
+
+
+.barra_fixa{
+    margin: -8px;
+    padding: 1rem 0rem;
+    background-color: #b00c06 ;
+    background-image: linear-gradient(#b00c06 , #600000 );
+    text-align: center;
+}
+
+a#buscas{
+    text-decoration: unset    ;
+    font-size: 14pt;
+    font-family: sans-serif;
+}
+
+
+
+button{
+    height: 21px;
+    width:  21px;
+    background-size: 20px;
+    border-width: 0;
+}
+
+a#titulo{
+    font-size: 20pt;
+    text-decoration: none;
+
+}

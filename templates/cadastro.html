@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Produto</title>
+</head>
+<body>
+    <h1>cadastro</h1>
+    <form action="{{ url_for('cadastro') }}" method="POST">
+        <label for="">Nome do Item: </label>
+        <input type="text" name="novo_item_descricao" >
+        <label for="">Link da imagem: </label>
+        <input type="text" name="novo_item_link">
+        <label for="">Valor do Item:</label>
+        <input type="text" name="novo_item_valor">
+        <label for="">Tipo do Item:</label>
+        <input type="text" name="novo_item_tipo">        
+        <button type="submit">cadastrar</button>
+    </form>
+
+
+</body>
+</html>

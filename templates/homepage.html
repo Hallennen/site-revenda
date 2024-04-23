@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block style %}
+    <title>Home - Shekina</title>
+    <link rel="stylesheet" href="../static/homepage.css">
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="conteudo">
+        <h2>CATALOGO</h2>
+        <!-- <p>teste</p> -->
+
+
+        <section>          
+            
+            {% for i in range(lista_num)  %}
+                <div class="cubo">
+                    <a href='/detalhe/{{produto[i][1]}}' ><img class='img' name="{{ produto[i][1] }}" src= {{produto[i][2]}}  alt="Homem Aranha" height="250"  width="380" id="miranha"></a>
+                    <p id="nome_do_item">{{produto[i][1]}}</p>
+                    <p id="preço_do_item">R$ {{produto[i][3]}}</p>
+
+
+                    
+                </div>                         
+            {% endfor %}
+
+        </section>
+        <br>
+
+
+
+{% endblock %}
+

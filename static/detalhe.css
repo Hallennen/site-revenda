@@ -1,0 +1,64 @@
+body{
+    text-align: center;
+
+    align-content: center;
+    align-items: center;
+}
+
+
+/*-------------------------------------------- CABEÇALHO-------------------------------------------------*/
+a{
+    color: white;
+    font-size: 18pt;
+
+}
+
+/* .barra_fixa{
+    margin: -8px;
+    padding: 1rem 0rem;
+    background-color: blue;
+    text-align: center;
+} */
+
+
+input{
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 2rem;
+    width: 40%;
+}
+
+li{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+
+/*-------------------------------------------- CONTEUDO-------------------------------------------------*/
+
+
+button{
+    background-color: rgb(7, 168, 7);
+    color: white;
+    font-size: 20pt;
+    font-family: 'vendana';
+    width: 70%;
+    height: 3rem;
+    margin-bottom: 2rem;
+    border-color: green;
+    border-width:medium;
+    border-radius: 8px;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: green;
+}
+
+
+p.valor{
+    font-size: 40pt;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="../static/login.css">
+</head>
+<body>
+
+    <div class="conteiner">
+        <form action="{{ url_for('pegar_credenciais') }}" method='POST'>
+            <h2>Login</h2>
+            <label for="">User:</label><br>
+            <input autofocus required type="email" name="email_admin"><br>
+            <label for="">Password:</label><br>
+            <input required type="password" name="senha_admin"><br>
+            <button type="submit">Entrar</button>
+            {% if login_incorreto == True  %}
+                <div class='erro_login'>Login invalido</div>
+            {% endif %}
+        </form>
+    </div>
+</body>
+
+</html>

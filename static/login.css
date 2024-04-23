@@ -1,0 +1,49 @@
+body{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.conteiner{
+
+    position: absolute;
+    top: 40%; 
+    margin-top: -25px; 
+    
+    background-color: rgb(239, 239, 243);
+
+    height: 25%;
+    min-height: 220px;
+    width: 25%;
+    min-width: max-content;
+
+    border: 1px solid rgb(197, 190, 190);
+    border-radius: 5px;
+
+    box-shadow: 2px 1px 5px ;
+
+
+
+}
+
+
+
+
+input{
+    /* border-radius: 2%; */
+    width: 60%;
+}
+
+button{
+    text-align: center;
+    width:  10%;
+    margin-top: 1.5rem;
+    padding: 8px ;
+    padding-left: -5px;
+    margin-left: -8px;
+    min-width: max-content;
+}
+
+
+

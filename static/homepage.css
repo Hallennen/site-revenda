@@ -1,0 +1,109 @@
+
+.pagina{
+    display: flex;
+    flex-direction:column;
+    
+}
+
+
+/*-------------------------------------------- CABEÇALHO-------------------------------------------------*/
+/* .barra_fixa{
+    margin: -8px;
+    padding: 1rem 0rem;
+     background-color: blue;
+    text-align: center;
+} */
+
+a{
+    color: white;
+    font-size: 18pt;
+
+}
+
+input{
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 2rem;
+    width: 40%;
+}
+
+li{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*   FIM DO CABEÇALHO*/
+
+
+
+
+/*-------------------------------------------- CONTEUDO-------------------------------------------------*/
+
+
+.conteudo{
+    margin-top: 1rem;
+    margin-left: 15% ;
+    text-align: center;
+    width: 70%;
+
+}   
+
+section{
+    display: grid;
+    grid-gap: 0px 10px;
+    justify-content: center;  
+
+    grid-template-areas: "1 2 3";
+    grid-auto-columns: max-content;
+    box-shadow: 2px 2px 10px 2px;
+    
+}
+
+.cubo{
+    height: max-content;
+    border-radius: 10%;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    /* border:  5px; */
+    border: 2px solid black
+
+    
+}
+
+img{
+    padding-inline: 1rem;
+    margin-top: 1rem;
+    border-radius: 10%;
+}
+
+.cubo:hover{
+    cursor: pointer;
+    opacity: 60%;
+}
+
+
+p#nome_do_item{
+    /* color: rgb(204, 222, 238); */
+    font-size: 20pt;
+    color: black ;
+    font-weight: bold;
+}
+
+p#preço_do_item{
+    color: black;
+    /* color: rgb(204, 222, 238); */
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+footer{
+    text-align: center;
+}
