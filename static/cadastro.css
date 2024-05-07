@@ -1,0 +1,136 @@
+.conteiner{
+    text-align: center;
+    background-color: rgb(231, 243, 243);
+    padding: 1rem;
+    margin-top: -8px;
+    position: relative;
+}
+
+.secao_tabela_de_itens{
+    font-family: arial, sans-serif;
+    width: 80%;
+    margin-left: 10%;
+    background-color: #7a7774;
+    margin-top: -1%;
+}
+
+button#btn_cadastro{
+    margin-top: 1%;
+    border-radius:5pt;
+    height: 30px;
+    width: 5%;
+    font-family: Verdana;
+    font-size: 12pt;
+    color: rgb(7, 7, 7);
+}
+
+
+td, th {
+    color: white;
+    width: 40%;
+    border: 1px solid #c8bebe;
+    text-align: left;
+    padding: 8px;
+}
+
+th#checkbox-ativo, td#checkbox-ativo{
+    text-align: center;
+}
+
+
+h2{
+    text-align: center;
+}
+
+h5{
+    margin-left: 10%;
+}
+
+
+
+th#valor_item, th#tipo_item, th#id_item, td#valor_item, td#tipo_item, td#id_item{
+    width: 10%;
+    text-align: center;
+
+}
+
+
+.ativacao_inativacao{
+    text-align: center;
+    padding-top: 1rem;
+
+}
+
+button#options{
+    border-radius:5pt;
+    height: 30px;
+    width: 10%;
+    font-family: Verdana;
+    font-size: 12pt;
+    color: white;
+}
+
+.btn_edicao{
+    background-color: rgb(248, 132, 8);
+}
+
+.btn_ativar{
+    background-color: rgb(37, 176, 6);
+}
+
+.btn_desativacao{
+    background-color: rgb(245, 13, 13);
+}
+
+.btn_ativar, .btn_edicao, .btn_desativacao, button#btn_cadastro, button#btn_acao:hover{
+    cursor: pointer;
+    
+}
+
+
+
+ /* -------------      MODALS       ----------------------*/
+
+#modals{
+    min-width: 450px;
+    min-height: 50px;
+    text-align: center;
+
+}
+
+#forms{
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+}
+
+
+#btn_fechar {
+
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0.1rem;
+    right: 0.5rem;
+    clip-path: circle();
+    aspect-ratio: 1/1.5;
+    background-color: #eee5de;
+    border-width: 0;
+}
+
+input{
+    border-radius: 5px;
+}
+
+button#btn_acao{
+    border-radius: 5px;
+    border: 2px solid rgb(193, 185, 185);
+}
+
+
+
+
+
+
+

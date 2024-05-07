@@ -4,20 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Produto</title>
+    <link rel="stylesheet" href="../static/cadastro.css">
 </head>
 <body>
-    <h1>cadastro</h1>
-    <form action="{{ url_for('cadastro') }}" method="POST">
-        <label for="">Nome do Item: </label>
-        <input type="text" name="novo_item_descricao" >
-        <label for="">Link da imagem: </label>
-        <input type="text" name="novo_item_link">
-        <label for="">Valor do Item:</label>
-        <input type="text" name="novo_item_valor">
-        <label for="">Tipo do Item:</label>
-        <input type="text" name="novo_item_tipo">        
-        <button type="submit">cadastrar</button>
-    </form>
+    <div class="conteiner">
+        <h1>Cadastro</h1>
+        <form action="{{ url_for('cadastro') }}" method="POST">
+            <label for="">Nome do Item: </label>
+            <input type="text" name="novo_item_descricao" required>
+            <label for="">Link da imagem: </label>
+            <input type="text" name="novo_item_link" required>
+            <label for="">Valor do Item:</label>
+            <input type="text" name="novo_item_valor" required>
+            <label for="">Tipo do Item:</label>
+            <input type="text" name="novo_item_tipo" required>     
+            <label for="">Ativo:</label>
+            <input type="text" name="novo_item_ativo" required><br>
+            <button id="btn_cadastro">Cadastrar</button>
+        </form>
+    </div>
+    
+    <div class="ativacao_inativacao">
+        <button id="options" type="submit" class="btn_edicao">Editar</button>
+        <button id="options" type="submit" class="btn_ativar">Ativar</button>
+        <button id="options" type="submit" class="btn_desativacao">Desativar</button>
+    </div>
+
+    <dialog class="modal_ativacao"  id="modals" >
+        <form action="{{ ('ativacao') }}" method="POST" id="forms">
+            <label for="">Informe o ID do item:</label><br>
+            <input type="text" name="id_item_a_ativar" placeholder="ID-Item"><br>
+            <button type="submit" id="btn_acao">Ativar Item</button>
+        </form>
+        <button type='button'class="btn_ativacao_fechar" id="btn_fechar">X</button> 
+    </dialog>
+
+
+    <dialog class="modal_desativacao" id="modals">
+
+        <form action="{{ 'desativacao' }}" method="POST" id="forms">
+            <label for="">Informar o ID do Item:</label>
+            <input type="text" placeholder="ID-Item" name="id_item_a_desativar">
+
+            <button type="submit" id="btn_acao">Desativar Item</button>
+        </form>
+
+        <button type="button" class="btn_desativacao_fechar" id="btn_fechar">X</button>
+    </dialog>
+
+
+    <dialog class="modal_edicao" id="modals">
+
+        <form action="{{ ('edicao') }}" method="POST" id="forms">
+            <label for="">Informe o ID do item:</label>
+            <input type="text" name="id_item_a_editar" placeholder="ID-Item">
+
+            <button type="submit" id="btn_acao">Editar Item</button>
+        </form>
+
+        <button class="btn_fechar_edicao" id="btn_fechar">X</button>
+
+
+    </dialog>
+
+
+
+
+
+
+
+
+
+    <h2>Ativos:  ({{numero_ativos}})</h2>
+    <h5>*Itens ordenados por "TIPO"</h5>
+    <section class="secao_tabela_de_itens">
+        <table class="tabela_ativa">
+            <tr>
+                <th id="id_item">ID</th>
+                <th id="descricao_item">DESCRIÇÃO</th>
+                <th id="link_item">LINK_IMAGEM</th>
+                <th id="valor_item">VALOR</th>
+                <th id="tipo_item">TIPO</th>
+                <th id="checkbox-ativo">ATIVO?</th>
+            </tr>
+            {% for item_ativado in lista_de_itens_cadastrados_ativos  %}
+                <tr>
+                    <td id="id_item" name="{{item_ativado[0]}}">{{item_ativado[0]}}</td>
+                    <td id="descricao_item">{{item_ativado[1]}}</td>
+                    <td id="link_item" >{{item_ativado[2]}}</td>
+                    <td id="valor_item">{{item_ativado[3]}}</td>
+                    <td id="tipo_item">{{item_ativado[4]}}</td>
+                    <td id="checkbox-ativo">{{item_ativado[5]}}</button></td>
+                </tr>
+
+            {% endfor  %}
+        </table> 
+  
+    </section>
+    <br>
+
+
+    <h2>Desativados:  ({{numero_desativados}})</h2>
+    <h5>*Itens ordenados por "TIPO"</h5>
+    <section class="secao_tabela_de_itens">
+        <table class="tabela_desativados">
+            <tr>    
+                <th id="id_item">ID</th>
+                <th id="descricao_item">DESCRIÇÃO</th>
+                <th id="link_item">LINK_IMAGEM</th>
+                <th id="valor_item">VALOR</th>
+                <th id="tipo_item">TIPO</th>
+                <th id="checkbox-ativo">ATIVO?</th>
+            </tr>
+            {% for item_desativado in lista_de_itens_cadastrados_desativados %}
+                <tr>
+                    <td id="id_item">{{item_desativado[0]}}</td>
+                    <td id="descricao_item">{{item_desativado[1]}}</td>
+                    <td id="link_item">{{item_desativado[2]}}</td>
+                    <td id="valor_item">{{item_desativado[3]}}</td>
+                    <td id="tipo_item">{{item_desativado[4]}}</td>
+                    <td id="checkbox-ativo">{{item_desativado[5]}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </section>
+
+
+    <script>
+        const modal_ativacao = document.querySelector(".modal_ativacao")
+        const openModal_ativacao = document.querySelector(".btn_ativar")
+        const closeModal_ativacao = document.querySelector(".btn_ativacao_fechar")
+
+        openModal_ativacao.addEventListener('click', () => modal_ativacao.showModal())
+        closeModal_ativacao.addEventListener('click', () => modal_ativacao.close() )
+
+
+        const modal_desativacao = document.querySelector('.modal_desativacao')
+        const openModal_desativacao = document.querySelector(".btn_desativacao")
+        const closeModal_desativacao = document.querySelector(".btn_desativacao_fechar")
+
+        openModal_desativacao.addEventListener('click', () => modal_desativacao.showModal() )
+        closeModal_desativacao.addEventListener('click', () => modal_desativacao.close())
+
+        
+        const modal_edicao = document.querySelector('.modal_edicao')
+        const openModal_edicao = document.querySelector('.btn_edicao')
+        const closeModal_edicao = document.querySelector('.btn_fechar_edicao')
+
+        openModal_edicao.addEventListener('click', () => modal_edicao.showModal())
+        closeModal_edicao.addEventListener('click', () => modal_edicao.close())
+
+    </script>
+
+
 
 
 </body>

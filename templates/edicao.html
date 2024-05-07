@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edicao-item</title>
+    <link rel="stylesheet" href="../static/edicao.css">
+</head>
+<body>
+    <a href="{{ ('/cadastro-produto') }}">cadastro de produto</a>
+    <a href="">Visualizar item</a>
+
+    <br>
+    <div class="form_update">
+        <br>
+        <!-- <h1>{{infos}}</h1> -->
+
+        <form action=" {{ ('/edicao=True') }}" method="post">
+            <label>Descrição</label>
+            <input id="descricao" type="text" name="descricao">
+            <label>Link da Imagem:</label>
+            <input id="link" type="text" name="link">
+            <label>Valor:</label>
+            <input id="valor" type="text" name="valor">
+            <label>Tipo de Item:</label>
+            <input id="tipo" type="text" name="tipo">
+            <button type="submit">Atualizar</button>       
+        </form>
+    </div>
+
+    {% block content %}
+
+    {% endblock content %}
+
+    <script>
+        document.getElementById('descricao').value = '{{infos[1]}}';
+        document.getElementById('link').value = '{{infos[2]}}';
+        document.getElementById('valor').value = '{{infos[3]}}';
+        document.getElementById('tipo').value = '{{infos[4]}}';
+    </script>
+
+
+
+</body>
+</html>
+

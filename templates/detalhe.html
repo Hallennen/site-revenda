@@ -1,6 +1,13 @@
 
-{% extends 'base.html' %}
-    
+{% if teamplate == 'base' %}
+    {% extends 'base.html' %}
+
+{% elif teamplate == 'edicao' %}
+    {% extends 'edicao.html' %}
+{% endif %}
+
+
+
 {% block style %}
     <title>Detalhe produto</title>
     <link rel="stylesheet" href="../static/detalhe.css">
