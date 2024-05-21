@@ -9,12 +9,17 @@
 .secao_tabela_de_itens{
     font-family: arial, sans-serif;
     width: 80%;
-    margin-left: 10%;
+    margin-left: 10%; 
     background-color: #7a7774;
     margin-top: -1%;
 }
 
+table{
+    background-color: #7a7774;
+}
+
 button#btn_cadastro{
+    min-width: max-content;
     margin-top: 1%;
     border-radius:5pt;
     height: 30px;
@@ -62,6 +67,7 @@ th#valor_item, th#tipo_item, th#id_item, td#valor_item, td#tipo_item, td#id_item
 }
 
 button#options{
+    min-width: max-content;
     border-radius:5pt;
     height: 30px;
     width: 10%;
@@ -130,7 +136,30 @@ button#btn_acao{
 
 
 
+/* ------------------ tabelas -------------------- */
+
+label{
+    cursor: pointer;
+    padding: 5px;
+}
 
 
+.accordion,.accordion2, #toggle-1, #toggle-2{
+    display: none;
+}
+
+#toggle-1:checked ~ .accordion{
+    display: block;
+}
+
+
+#toggle-2:checked ~ .accordion2{
+    display: block;
+}
+
+
+#favicon{
+    width: 20px;
+}
 
 

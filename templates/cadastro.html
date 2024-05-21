@@ -71,64 +71,73 @@
 
 
 
-
-
-
-
-    <h2>Ativos:  ({{numero_ativos}})</h2>
-    <h5>*Itens ordenados por "TIPO"</h5>
-    <section class="secao_tabela_de_itens">
-        <table class="tabela_ativa">
-            <tr>
-                <th id="id_item">ID</th>
-                <th id="descricao_item">DESCRIÇÃO</th>
-                <th id="link_item">LINK_IMAGEM</th>
-                <th id="valor_item">VALOR</th>
-                <th id="tipo_item">TIPO</th>
-                <th id="checkbox-ativo">ATIVO?</th>
-            </tr>
-            {% for item_ativado in lista_de_itens_cadastrados_ativos  %}
+ 
+    <label for="toggle-1"> 
+        <h2>Ativos:  ({{numero_ativos}})
+        <img src="https://static.vecteezy.com/ti/vetor-gratis/p3/6827566-para-baixo-seta-icone-sinal-simbolo-logo-vetor.jpg" id="favicon">
+        </h2>        
+    </label>
+    <input type="checkbox" id="toggle-1">
+    <div class="accordion">
+        <h5>*Itens ordenados por "TIPO"</h5>
+        <section class="secao_tabela_de_itens">
+            <table class="tabela_ativa">
                 <tr>
-                    <td id="id_item" name="{{item_ativado[0]}}">{{item_ativado[0]}}</td>
-                    <td id="descricao_item">{{item_ativado[1]}}</td>
-                    <td id="link_item" >{{item_ativado[2]}}</td>
-                    <td id="valor_item">{{item_ativado[3]}}</td>
-                    <td id="tipo_item">{{item_ativado[4]}}</td>
-                    <td id="checkbox-ativo">{{item_ativado[5]}}</button></td>
+                    <th id="id_item">ID</th>
+                    <th id="descricao_item">DESCRIÇÃO</th>
+                    <th id="link_item">LINK_IMAGEM</th>
+                    <th id="valor_item">VALOR</th>
+                    <th id="tipo_item">TIPO</th>
+                    <th id="checkbox-ativo">ATIVO?</th>
                 </tr>
+                {% for item_ativado in lista_de_itens_cadastrados_ativos  %}
+                    <tr>
+                        <td id="id_item" name="{{item_ativado[0]}}">{{item_ativado[0]}}</td>
+                        <td id="descricao_item">{{item_ativado[1]}}</td>
+                        <td id="link_item" >{{item_ativado[2]}}</td>
+                        <td id="valor_item">{{item_ativado[3]}}</td>
+                        <td id="tipo_item">{{item_ativado[4]}}</td>
+                        <td id="checkbox-ativo">{{item_ativado[5]}}</button></td>
+                    </tr>
 
-            {% endfor  %}
-        </table> 
-  
-    </section>
+                {% endfor  %}
+            </table> 
+
+        </section>
+    </div>
     <br>
 
 
-    <h2>Desativados:  ({{numero_desativados}})</h2>
-    <h5>*Itens ordenados por "TIPO"</h5>
-    <section class="secao_tabela_de_itens">
-        <table class="tabela_desativados">
-            <tr>    
-                <th id="id_item">ID</th>
-                <th id="descricao_item">DESCRIÇÃO</th>
-                <th id="link_item">LINK_IMAGEM</th>
-                <th id="valor_item">VALOR</th>
-                <th id="tipo_item">TIPO</th>
-                <th id="checkbox-ativo">ATIVO?</th>
-            </tr>
-            {% for item_desativado in lista_de_itens_cadastrados_desativados %}
-                <tr>
-                    <td id="id_item">{{item_desativado[0]}}</td>
-                    <td id="descricao_item">{{item_desativado[1]}}</td>
-                    <td id="link_item">{{item_desativado[2]}}</td>
-                    <td id="valor_item">{{item_desativado[3]}}</td>
-                    <td id="tipo_item">{{item_desativado[4]}}</td>
-                    <td id="checkbox-ativo">{{item_desativado[5]}}</td>
+    <label for="toggle-2"><h2>Desativados:  ({{numero_desativados}})
+        <img src="https://static.vecteezy.com/ti/vetor-gratis/p3/6827566-para-baixo-seta-icone-sinal-simbolo-logo-vetor.jpg" id="favicon">
+        </h2>  
+    </label>
+    <input type="checkbox" id="toggle-2">
+    <div class="accordion2">
+        <h5>*Itens ordenados por "TIPO"</h5>
+        <section class="secao_tabela_de_itens">
+            <table class="tabela_desativados">
+                <tr>    
+                    <th id="id_item">ID</th>
+                    <th id="descricao_item">DESCRIÇÃO</th>
+                    <th id="link_item">LINK_IMAGEM</th>
+                    <th id="valor_item">VALOR</th>
+                    <th id="tipo_item">TIPO</th>
+                    <th id="checkbox-ativo">ATIVO?</th>
                 </tr>
-            {% endfor %}
-        </table>
-    </section>
-
+                {% for item_desativado in lista_de_itens_cadastrados_desativados %}
+                    <tr>
+                        <td id="id_item">{{item_desativado[0]}}</td>
+                        <td id="descricao_item">{{item_desativado[1]}}</td>
+                        <td id="link_item">{{item_desativado[2]}}</td>
+                        <td id="valor_item">{{item_desativado[3]}}</td>
+                        <td id="tipo_item">{{item_desativado[4]}}</td>
+                        <td id="checkbox-ativo">{{item_desativado[5]}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </section>
+    </div>
 
     <script>
         const modal_ativacao = document.querySelector(".modal_ativacao")

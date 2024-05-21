@@ -13,12 +13,6 @@ a{
 
 }
 
-/* .barra_fixa{
-    margin: -8px;
-    padding: 1rem 0rem;
-    background-color: blue;
-    text-align: center;
-} */
 
 
 input{
@@ -61,4 +55,8 @@ button:hover{
 
 p.valor{
     font-size: 40pt;
+}
+
+label{
+    padding: 1rem black;
 }
