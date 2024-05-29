@@ -44,15 +44,15 @@ def contador(ativo=['SIM', 'NAO']):
 
 @app.route('/')
 def homepage():
-   
+  
 
-    return render_template('homepage.html', produto= dados_banco(dados_da_busca='completo'), lista_num = int(valor) )
+    return render_template('homepage.html', produto= dados_banco(dados_da_busca='completo'), lista_num = int(valor))
 
 
 
-@app.route('/catalogo/pesquisa', methods=['POST'])
+@app.route('/catalogo/pesquisa', methods=['GET','POST'])
 def buscar_catalogo_por_pesquisa():
-    item_pesquisa = request.form['barra_pesquisa']
+    item_pesquisa = request.form['barra_pesquisa'].capitalize()
     produto = item_pesquisa
 
     return render_template('homepage.html', produto= dados_banco('like',produto), lista_num = int(valor))
@@ -78,7 +78,7 @@ def detalhe_produto(produto):
 
 
 
-    return render_template('detalhe.html', teamplate = 'base', detalhe_descricao_produto = detalhe_item[1] , detalhe_valor_produto = detalhe_item[3], detalhe_imagem_produto = detalhe_item[2])
+    return render_template('detalhe.html', teamplate = 'base', detalhe_descricao_produto = detalhe_item[1] , detalhe_valor_produto = detalhe_item[3], detalhe_imagem_produto = detalhe_item[2], detalhe_tipo_produto=detalhe_item[4])
 
 
 

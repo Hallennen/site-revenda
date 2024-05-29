@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="../static/edicao.css">
 </head>
 <body>
-    <a href="{{ ('/cadastro-produto') }}">cadastro de produto</a>
-    <a href="">Visualizar item</a>
+    <div class="cabecalho">
+        <a class="btn_cadastro"  href="{{ ('/cadastro-produto') }}">Gerenciamento de produto</a>
+        <a class="btn_visualizar"  href=" /detalhe/{{infos[1]}} ">Visualizar item</a>
+
+    </div>
 
     <br>
     <div class="form_update">
@@ -16,7 +19,7 @@
         <!-- <h1>{{infos}}</h1> -->
 
         <form action=" {{ ('/edicao=True') }}" method="post">
-            <label>Descrição</label>
+            <label>Descrição:</label>
             <input id="descricao" type="text" name="descricao">
             <label>Link da Imagem:</label>
             <input id="link" type="text" name="link">

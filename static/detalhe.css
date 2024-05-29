@@ -34,7 +34,7 @@ li{
 /*-------------------------------------------- CONTEUDO-------------------------------------------------*/
 
 
-button{
+button.compra{
     background-color: rgb(7, 168, 7);
     color: white;
     font-size: 20pt;
@@ -47,8 +47,11 @@ button{
     border-radius: 8px;
 }
 
-button:hover{
+button{
     cursor: pointer;
+}
+
+button.compra:hover{
     background-color: green;
 }
 
@@ -57,6 +60,45 @@ p.valor{
     font-size: 40pt;
 }
 
+
+.mais_opcoes{
+    display: block;
+    display: inline;
+}
+
+.informacoes{
+    width: 35%;
+    height: 3rem;    
+    min-height: max-content;
+    min-width: max-content;
+}
+
 label{
-    padding: 1rem black;
+    cursor: pointer;
+
+
+}
+
+input{
+    display: none;
+}
+
+
+.informações{
+    align-items: center ;
+    margin-left: 15%;
+    display: none;
+    background-color: rgb(238, 237, 237);
+    width: 70%;
+    height: 100px;
+}
+
+input:checked ~ .informações {
+    display: block;
+}
+
+.text{
+    color: black;
+    font-size: 12pt;
+    text-decoration: none;
 }

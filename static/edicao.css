@@ -6,9 +6,65 @@ body{
 }
 
 
-/* .form_update{
-    display: flex;
+a.btn_cadastro , .btn_visualizar{
+    display: inline-flex;
+    padding-inline: 2rem ;
+    font-size: 20pt;
+    text-decoration: none;
+    margin-top: 5px;
+
+}
+.cabecalho{
+    margin-top: -7px;
+    background-color:  rgb(231, 243, 243);
+    height: 40px;
+}
+
+.form_update{
+    display: flexbox;
+    padding: 1rem;
+    margin-top: -20px;
+    padding-bottom: 3rem;
     text-align: center;
-    text-justify: center;
-    background-color: yellow;
-} */
+    background-color:  rgb(231, 243, 243) ;
+    
+}
+
+input{
+    border-radius: 10px ;
+    border: 1px solid grey;
+}
+
+
+.mais_opcoes, a{
+    display: none;
+}
+
+p{
+    font-size: 25pt;
+}
+
+label{
+    font-size: 20pt;
+    padding-left: 40px;
+    padding-right: 5px;
+    justify-content: space-between;
+}
+
+input{
+    padding: 6px;
+}
+
+button{
+    margin-left: 10px;
+    padding: 6px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
+

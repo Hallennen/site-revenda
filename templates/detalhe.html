@@ -24,14 +24,32 @@
             <img src={{detalhe_imagem_produto}} alt="" width="500px" height="500px" >
             <p class="valor"> Por: {{detalhe_valor_produto}} </p>
 
-            <a href="https://wa.me/+5511991984592 "><button type="submit"> Chamar Vendedor</button></a>
+            <a href="https://wa.me/+5511991984592 "><button class="compra" type="submit"> Chamar Vendedor</button></a>
 
         </div>   
-        <section>
-            <label for="">informações do produto</label>
-            <H1>teste texto informativo!</H1>
-        </section> 
-
+        
     </div>
+    
+    <section class="mais_opcoes">
+        <button class="informacoes">
+            <label class='text' for="toggle-1">Informações do produto
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25304.png" height="10px"  width="10px"></button>
+            </label> 
+
+        <input type="checkbox" id="toggle-1">
+
+
+        <button class="informacoes">
+            <a class="text" href='/catalogo/{{detalhe_tipo_produto}}'>
+            <label for="toggle-2">Produtos similares
+                <img id="icone_mais_informações" src="https://cdn-icons-png.flaticon.com/512/25/25304.png" height="10px"  width="10px"></button>
+            </label>
+            </a>
+
+        <div class="informações">
+            <h3>Informações do produto: </h3>
+            <h4>{{informativo}} teste de texto</h4>
+        </div>
+    </section> 
 
 {% endblock content %}
